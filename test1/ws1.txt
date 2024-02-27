@@ -1,0 +1,4 @@
+What is the purpose of the log message you supply to your git commit? to inform others of the change
+What do you think makes a good commit message? short and concise
+When and how often should I be committing my work? commit as often as possible? or when a new logical element is added?
+rue or False, you should commit all files (including binaries, images, and log files) to Git. FALSE
