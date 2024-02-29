@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-extern double array_mean(int[], int);
+extern double array_mean(int array[], int n);
 
 
 int main() {

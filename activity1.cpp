@@ -1,4 +1,6 @@
 #include <iostream>
+using namespace std;
+
 // Sums together all positive numbers and returns them
 int sum_positive(int array[], int n) {
     int total = 0;
@@ -13,6 +15,6 @@ int sum_positive(int array[], int n) {
 
 int main() {
     int test_array[5] = {5,3,4,-1,8};
-    std::cout << sum_positive(test_array, 5) << std::endl;
+    cout << sum_positive(test_array, 5) << endl;
     return 0;
 }
