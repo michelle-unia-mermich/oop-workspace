@@ -8,15 +8,19 @@ void print_pass_fail(char grade){
             break;
         case 'B':
             cout << "Pass" << endl;
+            break;
         case 'C':
             cout << "Pass" << endl;
+            break;
         case 'D':
             cout << "Fail" << endl;
+            break;
         case 'E':
             cout << "Fail"<< endl;
+            break;
         default:
             cout << "Nothing" << endl;
-
+            break;
 
     }
 }
