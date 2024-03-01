@@ -1,6 +1,6 @@
 #include <iostream>
 
-int count_evens_from_1(int number){
+int count_evens(int number){
     int count=0;
     if (number>=1){
         for(int i=1; i<=number; i++){
