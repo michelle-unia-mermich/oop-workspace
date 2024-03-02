@@ -12,7 +12,7 @@ bool is_f(int array[], int n){
                 }
             }
         }else{
-            int middle=(int) (n/2 - 0.5);
+            int middle=(int) (((double)n)/2-0.5);
             for(int i=0; i<middle; i++){
                 if((array[i]!=array[n-1-i]) || (array[i] > array[i+1])){
                     ans = false;
