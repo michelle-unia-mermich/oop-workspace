@@ -11,7 +11,8 @@ bool is_fanarray(int array[], int n){
             }
         }
         else{
-            int middle=(int) (((double)n)/2-0.5); // changed
+            int middle=(int) (((double)n)/2-0.5); // changed 
+            // or can simply say: int middle = n/2;
             for (int i=0; i< middle ; i++){
                 if((array[i]!=array[n-1-i])||(array[i]>array[i+1])){
                     ans=false;
