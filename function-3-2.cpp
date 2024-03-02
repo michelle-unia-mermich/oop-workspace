@@ -16,7 +16,19 @@ is even or if it is less than 1.
 int median_array(int array[], int n){
     int median=0;
     //sort through and adjusting in ascending order
-    std::sort(array, array + n);
+    //bubble sort
+    for (int j=(n-2); j >=1; j -=1){ 
+        for (int i=0; i<=j; i++){
+            if (array[i]>array[i+1]){
+                int larger_temp=array[i];
+                int smaller_temp=array[i+1];
+                array[i]=smaller_temp;
+                array[i+1]=larger_temp;
+            }
+        }
+    }
+
+    //find the median value
     if ((n>=1)&&(n%2!=0)){
         int middle_position= n/2; //int n/2 rounding down to nearest integer
         median=array[middle_position];
