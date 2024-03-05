@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include <math.h>
 
 long binary_convert(long number){
     //The number of elements in an array is always fixed, you cannot change it.
