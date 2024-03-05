@@ -15,12 +15,13 @@ long subtraction(long num1, long num2){
     return binary_convert(sum);
 }
 
+
 int main(){
-    long num1=0b10001;
-    long num2=0b110001;
+    long num2=0b10001;
+    long num1=0b110001;
 
     cout << "Sum is " << addition(num1,num2)<<endl;
-    cout << "Subtraction is" << subtraction(num1,num2)<<endl;
+    cout << "Subtraction is " << subtraction(num1,num2)<<endl;
 
     return 0;
 
