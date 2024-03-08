@@ -1,11 +1,12 @@
 #include <iostream>
+using namespace std;
 
 int is_identity(int array[10][10])
 {
     int result=1; //in the beginning, true
     for(int i=0;i<10;i++)
     {
-        for(int j=0; i<10; j++)
+        for(int j=0; j<10; j++)
         {
             if(i==j)
             {
@@ -23,6 +24,7 @@ int is_identity(int array[10][10])
             }
         }
     }
+    
     return result;
 
 }
