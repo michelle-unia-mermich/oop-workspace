@@ -3,7 +3,8 @@
 #include <math.h>
 using namespace std;
 
-extern void print_binary_str(string decimal_str);
+extern void print_binary_str(string);
+//in the extern no need to declare fully the function, eg. no need decimal_str: void print_binary_str(string decimal_str). string is enough
 
 int main()
 {
