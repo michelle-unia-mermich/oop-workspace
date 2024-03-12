@@ -7,7 +7,7 @@ int main()
     double a=2;
     double *q=&a;
     changeValue(q);
-    cout << a << endl;
+    cout << *q << endl;
 
     int size=10;
     double array[10]={1,2,3,4,5,6,7,8,9,10};
@@ -22,8 +22,9 @@ int main()
     double* p=dynamicArray(N,M);
     for(int i=0;i<N;i++)
    {
-    cout << *(p+i) << endl;
+    cout << *(p+i) << " ";
    }
+   cout << endl;
    return 0;
 
 }

@@ -12,9 +12,9 @@ void printArray(double* pointer_array, int size)
     //accepts a pointer to an array and its size as arguments, and prints out the content of the array. 
     for(int i=0;i<size;i++)
     {
-        cout << *(pointer_array+i) << endl;
+        cout << *(pointer_array+i) << " ";
     }
-
+    cout << endl;
 }
 
 double arrayMax(double* pointer_array, int size)
