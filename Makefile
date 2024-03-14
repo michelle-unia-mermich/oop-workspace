@@ -1,10 +1,10 @@
 # Workshop Makefile
 
-trial: main.o
-	g++ -o workshop main.o
+michelle: main.o
+	g++ -o kate main.o
 
 main.o: main.cpp workshop.h
 	g++ -c main.cpp
 
 run:
-	./trial
+	./workshop
