@@ -1,4 +1,5 @@
 #include <iostream>
+#include<algorithm>
 using namespace std;
 
 int *readNumbers(int length) 
@@ -61,15 +62,15 @@ int secondSmallestSum(int *numbers,int length)
        {
             //consider the case when feosa=0, j=2
             //The goal is to take the sum of {1,2,3} (when position feosa=0 goes to position j=2)
-            sum+=*(numbers+u)
+            sum+=*(numbers+u);
        }
        //for every sum increase the count eg. the position of the sum in pointer_sum_array
        count++;
        *(pointer_sum_array+count)=sum;
     }
    }
-
-    //now test what is the second smallest number is pointer_sum_array
-    int no_subarrays=length*(length+1)/2;
-    int* pointer_sum_array
+    //now sort theh sum array
+    std::sort(pointer_sum_array, pointer_sum_array + no_subarrays);
+    //the second smallest number is * (pointer_sum_array+1)
+    return *(pointer_sum_array+1);
 }
