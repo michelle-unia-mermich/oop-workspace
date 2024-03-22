@@ -24,5 +24,7 @@ int main()
         cout<< pl.people[i].name<< endl;
 
     }
+    //How to delete the memory in Heap?
+    
     return 0;
 }

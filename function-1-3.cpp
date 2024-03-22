@@ -1,17 +1,6 @@
 #include "Person.h"
-/*
-struct Person {
-    std::string name;
-    int age;
-};
 
-struct PersonList {
-    Person* people;
-    int numPeople; //maybe like the identity number of each person?
-};
-*/
 
-/*
 PersonList deepCopyPersonList(PersonList pl)
 {
     //return a new deep copy, that is, the people field of the new PersonList struct should point to a new array of n Person structs, each with the same name and age fields as the original.
@@ -25,7 +14,7 @@ PersonList deepCopyPersonList(PersonList pl)
     }
     return deep_copy_pl;
 }
-*/
+
 
 /*
 PersonList deepCopyPersonList(PersonList pl)
@@ -57,6 +46,7 @@ PersonList deepCopyPersonList(PersonList pl)
         int temp_age=pl.people[i].age;
         deep_copy_pl.people[i].age=temp_age;
     }
+
     return deep_copy_pl;
 }
 
@@ -80,3 +70,11 @@ PersonList createPersonList(int n)
     result.numPeople=n;
     return result;
 }
+
+
+
+Person person_array[n]];
+PersonList.people=person_array;
+
+
+

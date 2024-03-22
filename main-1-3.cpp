@@ -15,6 +15,7 @@ int main()
     PersonList pl;
     int n=5;
     pl=createPersonList(n);
+    PersonList new_pl=deepCopyPersonList(pl)
     cout << "Address of the Person array of the first PersonList:"<< deepCopyPersonList(pl).people << endl; //this is a pointer
     cout<< "Address of the second array of the first PersonList:"<< pl.people<< endl; //pointer of the orginal PersonList
     for(int i=0;i<n;i++)
@@ -24,5 +25,9 @@ int main()
         cout<< pl.people[i].name<< endl;
 
     }
+
+    //How to delete the memory in Heap?
+    delete[] pl.people;
+    delete[] .people;
     return 0;
 }
