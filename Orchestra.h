@@ -14,7 +14,7 @@ class Orchestra
         Musician * musician_array;
 
     public:
-        //Musician musician_array[current_size]; //cannot use this because current_size is not static
+        //WHY WRONG? //Musician musician_array[current_size]; //cannot use this because have to implement everything in Orchestra.cpp
         Orchestra();
         Orchestra(int max_size);
         // returns the number of musicians who have joined the orchestra
