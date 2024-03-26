@@ -9,13 +9,14 @@ class Orchestra
     private:
         //int max_size;
         //int current_size;
-    public:
-        int max_size;
+        int _max_size;
         int current_size;
         Musician * musician_array;
+
+    public:
         //Musician musician_array[current_size]; //cannot use this because current_size is not static
         Orchestra();
-        Orchestra(int max_sizeee);
+        Orchestra(int max_size);
         // returns the number of musicians who have joined the orchestra
         int get_current_number_of_members(); 
         // returns true if any musician in the orchestra plays the specified instrument

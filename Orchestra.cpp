@@ -3,15 +3,15 @@
 
 Orchestra::Orchestra()
 {
-    max_size=0;
+    _max_size=0;
     current_size=0;
 }
 
-Orchestra::Orchestra(int max_sizeee)
+Orchestra::Orchestra(int max_size)
 {
-    max_size=max_sizeee;
+    _max_size=max_size;
     current_size=0;
-    musician_array =new Musician[max_size];
+    musician_array =new Musician[_max_size];
 }
 
 int Orchestra::get_current_number_of_members()
@@ -43,21 +43,18 @@ Musician* Orchestra::get_members()
 bool Orchestra::add_musician(Musician new_musician)
 {
     bool ans=false;
-    if(current_size<max_size)
+    if(current_size<_max_size)
     {
-        bool ans=true;
+        ans=true;
         //add new musician to the orchestra
         //let's say the current_size is 0, you add musician to index 0
         //if the current_size is 1, you add musician to index 0
         //the maximum current_size is max_size-1 for this chunk of code current_size<max_size is true. corresponding to the last element of the array
+
         musician_array[current_size]=new_musician;
         current_size++;
+        
     }
-    else
-    {
-        ans=false;
-    }
-
     return ans;
 
 }
