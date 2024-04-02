@@ -1,8 +1,5 @@
-orchestra:
-	g++ -std=c++11 -o orchestra.o main-1-2.cpp Orchestra.cpp Musician.cpp
-
-musician:
-	g++ -std=c++11 -o musician.o main-1-1.cpp Musician.cpp
+all:
+	g++ -std=c++11 -o main-1-1.o main-1-1.cpp wizard.cpp warrior.cpp player.cpp
 
 cleanup:
 	rm -rf *.o
