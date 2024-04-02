@@ -4,9 +4,8 @@
 using namespace std;
 #include "player.h"
 
-class Warrior: public Player 
+class Warrior: public Player //if I put public here, nothing will be downgraded. If I put protected, everything above protected will be downgraded to protected: public of parent to protected in daughter, protected stays protected, and private stays private because private is below protected. If I put private here, everything above private will be downgraded to private
 {
-    //will the data members in private of mother class be in private or public domain of daughter class if we declare public like this
     private:
         string _weapon;
     public:
@@ -21,7 +20,7 @@ class Warrior: public Player
     
     ~Warrior()
     {
-        //if we don't declare anything then no need destructor?
+        //if we don't declare any dynamically allocated variables then no need destructor
     };
 };
 

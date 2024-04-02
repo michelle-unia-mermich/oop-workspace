@@ -6,11 +6,10 @@ using namespace std;
 
 class Wizard: public Player 
 {
-    //will the data members in private of mother class be in private or public domain of daughter class if we declare public like this
     private:
         int _mana;
     public:
-
+        //missing empty constructor
         Wizard(string name, int health, int damage, int mana); 
         void castSpell(Player* opponent);
         
@@ -23,7 +22,6 @@ class Wizard: public Player
     
     ~Wizard()
     {
-        //if we don't declare anything then no need destructor?
     };
 };
 

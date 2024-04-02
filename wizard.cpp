@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-Wizard::Wizard(string name, int health, int damage, int mana)
+Wizard::Wizard(string name, int health, int damage, int mana) //could have use the consructor of parent class using ":.." after this line. Then we can declare _name,_health,_damage in private domain of parent class. See lecture videos.
 {
     _name=name;
     _health=health;
@@ -23,7 +23,7 @@ void Wizard::setMana(int new_mana)
 
 void Wizard::castSpell(Player* opponent)
 {
-    //the wizard attacks accordingn to damage that is mana, not the damage of the parent class? so the damage data member of the wizard is useless?
+    //the wizard attacks accordingn to damage that is mana, not the damage of the parent class. so the damage data member of the wizard is not used.
     int damage_player= this->getMana();
     cout << this->getName() << " casts a spell on " << opponent->getName() << " for " <<  damage_player << " damage.\n";
     attack(opponent, damage_player);
