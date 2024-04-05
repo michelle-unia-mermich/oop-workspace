@@ -22,7 +22,7 @@ int main() {
         string s;
         int newID;
         std::cin >> s;
-        std::cout<< " together with its ID";
+        std::cout<< " together with its ID: "; ;
         std::cin >> newID;
         std::cout<<endl;
         if(s=="Car")

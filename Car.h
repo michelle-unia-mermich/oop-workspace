@@ -12,7 +12,7 @@ class Car: public Vehicle
     public:
         Car();
         Car(int ID);
-        int getParkingDuration();
+        double getParkingDuration();
 
     ~Car()
     {

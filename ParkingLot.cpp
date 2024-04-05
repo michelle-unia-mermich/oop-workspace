@@ -59,7 +59,7 @@ int ParkingLot::countOverstayingVehicles(int maxParkingDuration)
     int count;
     for (int i=0;i<current_size;i++)
     {
-        if(vehicles[i].getParkingDuration()>maxParkingDuration)
+        if((vehicles[i].getParkingDuration())>maxParkingDuration)
         {
             count++;
         }

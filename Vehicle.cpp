@@ -25,7 +25,9 @@ time_t Vehicle::get_timeOfEntry()
 }
 */
 
-int Vehicle::getParkingDuration()
+/*
+double Vehicle::getParkingDuration()
 {
-    return 0;
+    return 5000;
 }
+*/

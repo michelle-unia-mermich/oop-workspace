@@ -20,7 +20,7 @@ int main() {
         string s;
         int newID;
         std::cin >> s;
-        std::cout<< " together with an ID";
+        std::cout<< " together with an ID: ";
         std::cin >> newID;
         std::cout<<endl;
         if(s=="Car")
