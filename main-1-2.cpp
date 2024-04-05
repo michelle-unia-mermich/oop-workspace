@@ -1,4 +1,5 @@
 #include <iostream>
+#include "ParkingLot.h"
 #include "Vehicle.h"
 #include "Bus.h"
 #include "Car.h"
@@ -7,40 +8,40 @@ using namespace std;
 #include <string>
 
 int main() {
-    Vehicle * array;
-    cout << "Prompt the user for the numer of vehicle: ";
-    int no;
-    cin >> no;
-    cout<< endl;
+    ParkingLot parkinglot(10);
 
-    array= new Vehicle[no];
+    Vehicle * array;
+    array= new Vehicle[10];
     int count=0;
 
-    for(int i=0;i<no;i++)
+    for(int i=0;i<10;i++)
     {
-        std::cout<< "First, key in the type of vehicle, between Car, Bus and Motorbike: "<< endl;
+        std::cout<< "First, key in the type of vehicle to park int the lot, between Car, Bus and Motorbike: "<< endl;
         string s;
         int newID;
         std::cin >> s;
-        std::cout<< " together with its ID";
+        std::cout<< " together with an ID";
         std::cin >> newID;
         std::cout<<endl;
         if(s=="Car")
         {
             Car car1(newID);
             array[count]=car1;
+            parkinglot.parkvehicle((array+count));
             count++;
         }
         if(s=="Bus")
         {
             Bus Bus1(newID);
             array[count]= Bus1;
+            parkinglot.parkvehicle((array+count));
             count++;
         }
         if(s=="Motorbike")
         {
             Motorbike Motorbike1(newID);
             array[count]= Motorbike1;
+            parkinglot.parkvehicle((array+count));
             count++;
         }
 
@@ -50,11 +51,11 @@ int main() {
         }
     }
 
-    //print out the parking duration for each vehicle in the list
-    for(int j=0;j<no;j++)
-    {
-        cout<< "For vehicle with ID: "<< array[j].getID()<<" the parking duration is: "<< array[j].getParkingDuration()<< endl;
-    }
+    int ID_to_unpark;
+    cout<< "Key in ID to unpark: ";
+    cin>> ID_to_unpark;
+    cout<< endl;
+    parkinglot.unparkVehicle(ID_to_unpark);
 
     delete [] array;
     return 0;
