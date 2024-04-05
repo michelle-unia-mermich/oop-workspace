@@ -27,7 +27,10 @@ class AssetPortfolio
 
     ~AssetPortfolio()
     {
-        delete [] _pointer_assets_list;
+        if (_max_assets>0)//to avoid segmentation fault
+        {
+            delete [] _pointer_assets_list;
+        }
     };                          
 };
 
