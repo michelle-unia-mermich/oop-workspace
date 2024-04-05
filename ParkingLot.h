@@ -15,7 +15,7 @@ class ParkingLot
         ParkingLot();
         ParkingLot(int max_size);
         int getCount(); //get current count
-        void parkvehicle(Vehicle* new_vehicle);
+        void parkVehicle(Vehicle* new_vehicle);
         void unparkVehicle(int ID);
         int countOverstayingVehicles(int maxParkingDuration);
 

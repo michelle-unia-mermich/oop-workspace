@@ -27,21 +27,21 @@ int main() {
         {
             Car car1(newID);
             array[count]=car1;
-            parkinglot.parkvehicle((array+count));
+            parkinglot.parkVehicle((array+count));
             count++;
         }
         if(s=="Bus")
         {
             Bus Bus1(newID);
             array[count]= Bus1;
-            parkinglot.parkvehicle((array+count));
+            parkinglot.parkVehicle((array+count));
             count++;
         }
         if(s=="Motorbike")
         {
             Motorbike Motorbike1(newID);
             array[count]= Motorbike1;
-            parkinglot.parkvehicle((array+count));
+            parkinglot.parkVehicle((array+count));
             count++;
         }
 

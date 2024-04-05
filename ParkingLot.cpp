@@ -21,7 +21,7 @@ int ParkingLot::getCount()
     return current_size;
 }
 
-void ParkingLot::parkvehicle(Vehicle* new_vehicle)
+void ParkingLot::parkVehicle(Vehicle* new_vehicle)
 {
     if(current_size<_max_size)
     {
