@@ -28,7 +28,7 @@ void ParkingLot::parkVehicle(Vehicle* new_vehicle)
         //vehicles[current_size]= new Vehicle(new_vehicle->getID());//current_size does not represent the available index
         for(int i=0; i<_max_size; i++) //luot het array bao gom nhung cho trong vi cho dau xe khong lien tuc
         {
-            if (vehicles[i]==NULL) //OR nullptr
+            if (vehicles[i]==NULL) //OR if (vehicles[i]==nullptr) 
             {
                 vehicles[i]= new Vehicle(new_vehicle->getID());
                 break; //break applies for loops, only two things, for loop and while //if not break the same car will occupy all available positions
@@ -46,7 +46,7 @@ void ParkingLot::unparkVehicle(int ID)
 {
     //check if there is this ID in the list
     bool have_this_ID=false;
-    for (int i=0;i<current_size;i++)
+    for (int i=0;i<_max_size;i++)
     {
         if(vehicles[i]->getID()==ID)
         {
