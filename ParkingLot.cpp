@@ -13,7 +13,7 @@ ParkingLot::ParkingLot(int max_size)
 {
     _max_size=max_size;
     current_size=0;
-    vehicles =new Vehicle[_max_size];
+    vehicles =new Vehicle*[_max_size]; //the pointer points to Vehicles objects so when Car, Bus, Motorbike are added, they are all converted to Vehicle type
 }
 
 int ParkingLot::getCount()
