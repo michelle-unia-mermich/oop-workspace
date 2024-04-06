@@ -12,7 +12,7 @@ class Bus: public Vehicle
     public:
         Bus();
         Bus(int ID);
-        double getParkingDuration();
+        int getParkingDuration();
 
     ~Bus()
     {

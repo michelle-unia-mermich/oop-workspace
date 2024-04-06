@@ -12,7 +12,7 @@ class Motorbike: public Vehicle
     public:
         Motorbike();
         Motorbike(int ID);
-        double getParkingDuration();
+        int getParkingDuration();
 
     ~Motorbike()
     {

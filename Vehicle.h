@@ -12,7 +12,7 @@ class Vehicle
         Vehicle (int ID);
         int getID();
         //time_t get_timeOfEntry();
-        virtual double getParkingDuration(){return 500;};//QUESTION: i thought that even if I don't write virtual, overridding this function in the daughter class means that if I call this functionf from the daughter objects the base function will not be invoked. But it is after trying, printing out 5000. why? is there another way besides using virtual here
+        virtual int getParkingDuration(){return 500;};//QUESTION: i thought that even if I don't write virtual, overridding this function in the daughter class means that if I call this functionf from the daughter objects the base function will not be invoked. But it is after trying, printing out 5000. why? is there another way besides using virtual here
    
     ~Vehicle()
     {

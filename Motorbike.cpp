@@ -7,9 +7,10 @@ Motorbike::Motorbike():Vehicle(){}
 
 Motorbike::Motorbike(int ID):Vehicle(ID){}
 
-double Motorbike::getParkingDuration()
+int Motorbike::getParkingDuration()
 {
     time_t current_time; //when calling out the function
     current_time=time(0);
-    return (0.85*((double)(difftime(current_time,timeOfEntry))));//in seconds, discount 15%
+    int result= (int) (0.85*((double)(difftime(current_time,timeOfEntry))));
+    return result;//in seconds, discount 15%
 }
