@@ -42,13 +42,18 @@ void ParkingLot::parkVehicle(Vehicle* new_vehicle)
     }
 }
 
+//IF THE FUNCTION KEEPS ON FAILING, TRY TO WRITE TESTS. FIRST, SEE FROM YOU PROBLEM WHAT ARE THE DIFFERENT TEST CASES. DO BOUNDARY TEST, UNIT TEST.
 void ParkingLot::unparkVehicle(int ID)
 {
     //check if there is this ID in the list
     bool have_this_ID=false;
-    for (int i=0;i<_max_size;i++)
+    for (int i=0;i<_max_size;i++) //DO NOT USE CURRENT_SIZE, THE THING THAT ALWAYS CHANGES WHEN PARKING AND UNPARKING, AS AN INDEX OR LIMIT OF THE LOOP
     {
-        if(vehicles[i]->getID()==ID)
+        if(vehicles[i]==NULL) //easier to read, know which one is compiled first
+        {
+            continue; //continue the for loop, bypassing line 56 to 62
+        }
+        if(vehicles[i]->getID()==ID) //what if the pointer is null eg. there is no car parked in the spot 
         {
             have_this_ID=true;
             //then also remove this pointer from the list 
