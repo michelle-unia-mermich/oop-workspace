@@ -47,7 +47,7 @@ int main() {
         }  
     }
     //done data entry
-    std::this_thread::sleep_for (std::chrono::seconds(3));
+    //std::this_thread::sleep_for (std::chrono::seconds(3));
 
     //print out the parking duration for each vehicle in the list
     for(int j=0;j<total;j++)

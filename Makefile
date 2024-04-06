@@ -7,5 +7,7 @@
 
 test-1-1:
 	g++ -std=c++11 -o test1.o test-1-1.cpp ParkingLot.cpp Vehicle.cpp Car.cpp Bus.cpp Motorbike.cpp
+test-2:
+	g++ -std=c++11 -o test-2.o test-2.cpp ParkingLot.cpp Vehicle.cpp Car.cpp Bus.cpp Motorbike.cpp
 cleanup:
 	rm -rf *.o

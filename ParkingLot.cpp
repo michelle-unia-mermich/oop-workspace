@@ -30,7 +30,8 @@ void ParkingLot::parkVehicle(Vehicle* new_vehicle)
         {
             if (vehicles[i]==NULL) //OR if (vehicles[i]==nullptr) 
             {
-                vehicles[i]= new Vehicle(new_vehicle->getID());
+                //vehicles[i]= new Vehicle(new_vehicle->getID());
+                vehicles[i]=new_vehicle; //still retain Car, Bus, Motorbike
                 break; //break applies for loops, only two things, for loop and while //if not break the same car will occupy all available positions
             }
         }
@@ -49,15 +50,17 @@ void ParkingLot::unparkVehicle(int ID)
     bool have_this_ID=false;
     for (int i=0;i<_max_size;i++) //DO NOT USE CURRENT_SIZE, THE THING THAT ALWAYS CHANGES WHEN PARKING AND UNPARKING, AS AN INDEX OR LIMIT OF THE LOOP
     {
+        
         if(vehicles[i]==NULL) //easier to read, know which one is compiled first
         {
             continue; //continue the for loop, bypassing line 56 to 62
         }
+        
         if(vehicles[i]->getID()==ID) //what if the pointer is null eg. there is no car parked in the spot 
         {
             have_this_ID=true;
             //then also remove this pointer from the list 
-            delete vehicles[i]; //delete a single position, not [] the whole array
+            vehicles[i]=NULL; //delete a single position, not [] the whole array
             current_size--; //do not forget this
             break;
         }
