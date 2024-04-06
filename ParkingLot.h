@@ -9,8 +9,8 @@ class ParkingLot
     private:
         int _max_size;
         int current_size;
-        Vehicle ** vehicles;
-        //Vehicle * vehicles //create a pointer to a vehicle object. When assigning Bus, Car, Motorbike, they will be converted
+        Vehicle **vehicles;
+        //Vehicle * vehicles = new array of objects not array of pointers
 
     public:
         ParkingLot();

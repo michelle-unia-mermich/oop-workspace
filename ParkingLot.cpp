@@ -25,7 +25,7 @@ void ParkingLot::parkVehicle(Vehicle* new_vehicle)
 {
     if(current_size<_max_size)
     {
-        vehicles[current_size]=*new_vehicle;
+        vehicles[current_size]= new Vehicle(new_vehicle->getID());
         current_size++;
     }
     else
@@ -40,11 +40,13 @@ void ParkingLot::unparkVehicle(int ID)
     bool have_this_ID=false;
     for (int i=0;i<current_size;i++)
     {
-        if(vehicles[i].getID()==ID)
+        if(vehicles[i]->getID()==ID)
         {
             have_this_ID=true;
-            //then also remove from the list 
-            delete (vehicles+i);
+            //then also remove this pointer from the list 
+            delete vehicles[i]; //delete a single position, not [] the whole array
+            current_size--; //do not forget this
+            break;
         }
     }
 
@@ -56,10 +58,10 @@ void ParkingLot::unparkVehicle(int ID)
 
 int ParkingLot::countOverstayingVehicles(int maxParkingDuration)
 {
-    int count;
+    int count=0;//do not forget initialise count=0 if not count++ starts from random number
     for (int i=0;i<current_size;i++)
     {
-        if((vehicles[i].getParkingDuration())>maxParkingDuration)
+        if((vehicles[i]->getParkingDuration())>maxParkingDuration)
         {
             count++;
         }
