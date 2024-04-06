@@ -25,7 +25,15 @@ void ParkingLot::parkVehicle(Vehicle* new_vehicle)
 {
     if(current_size<_max_size)
     {
-        vehicles[current_size]= new Vehicle(new_vehicle->getID());
+        //vehicles[current_size]= new Vehicle(new_vehicle->getID());//current_size does not represent the available index
+        for(int i=0; i<_max_size; i++) //luot het array bao gom nhung cho trong vi cho dau xe khong lien tuc
+        {
+            if (vehicles[i]==NULL) //OR nullptr
+            {
+                vehicles[i]= new Vehicle(new_vehicle->getID());
+                break; //break applies for loops, only two things, for loop and while //if not break the same car will occupy all available positions
+            }
+        }
         current_size++;
     }
     else
