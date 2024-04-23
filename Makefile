@@ -1,13 +1,11 @@
 1-1:
-	g++ -std=c++11 -o main-1-1.o main-1-1.cpp Vehicle.cpp Car.cpp Bus.cpp Motorbike.cpp
-1-2:
-	g++ -std=c++11 -o main-1-2.o main-1-2.cpp ParkingLot.cpp Vehicle.cpp Car.cpp Bus.cpp Motorbike.cpp
+	g++ -std=c++11 -o main-1-1.o main-1-1.cpp Appliance.cpp
+2-1:
+	g++ -std=c++11 -o main-2-1.o main-2-1.cpp Fridge.cpp Appliance.cpp
+2-2:
+	g++ -std=c++11 -o main-2-2.o main-2-2.cpp TV.cpp Appliance.cpp
 1-3:
-	g++ -std=c++11 -o main-1-3.o main-1-3.cpp ParkingLot.cpp Vehicle.cpp Car.cpp Bus.cpp Motorbike.cpp
+	g++ -std=c++11 -o main-1-3.o main-1-3.cpp Fridge.cpp Appliance.cpp
 
-test-1-1:
-	g++ -std=c++11 -o test1.o test-1-1.cpp ParkingLot.cpp Vehicle.cpp Car.cpp Bus.cpp Motorbike.cpp
-test-2:
-	g++ -std=c++11 -o test-2.o test-2.cpp ParkingLot.cpp Vehicle.cpp Car.cpp Bus.cpp Motorbike.cpp
 cleanup:
 	rm -rf *.o
