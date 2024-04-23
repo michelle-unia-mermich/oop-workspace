@@ -2,7 +2,6 @@
 #define APPLIANCE_H
 #include <string>
 using namespace std;
-#include "Vehicle.h"
 
 class Appliance
 {
@@ -12,7 +11,6 @@ class Appliance
     public:
         Appliance();
         Appliance(int powerRating); //create an appliance with a power rating
-        
         void turnOn();
         void turnOff();
         

@@ -1,5 +1,5 @@
-#ifndef APPLIANCE_H
-#define APPLIANCE_H
+#ifndef HOUSE_H
+#define HOUSE_H
 #include <string>
 using namespace std;
 #include "Appliance.h"
@@ -8,6 +8,7 @@ class House
 {
     protected:
         int _numAppliances;
+        Appliance ** appliances;
 
     public:
         House();
@@ -15,20 +16,23 @@ class House
         
         bool addAppliance(Appliance * appliance);
         //add an Appliance object to the house
-        void turnOn();
-        void turnOff();
+        // return true if there is space in the house otherwise return false
         
         //getter and setter functions
-        double get_powerRating(); 
-        void set_powerRating(int new_powerRating);
-        double get_isOn(); 
-        ///void set_isOn(); //We can change the _isOn using the turn on and turn off function
+        int get_numpAppliances();
+        void set_numpAppliances();
+        
 
-        //a virtual function and makes it returns zero //virtual 
-        double getPowerConsumption();
+        double get_totalPowerConsumption(); 
+        //return the total power consumption of all appliances in the house
 
-    ~Appliance()
+
+    ~House()
     {
+        for (int i = 0; i < _numAppliances; i++)
+        {
+            delete appliances[i];
+        }
 
     };
 };

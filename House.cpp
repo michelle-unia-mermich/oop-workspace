@@ -10,7 +10,7 @@ House::House()
 House::House(int numAppliances)
 {
     _numAppliances=numAppliances;
-    _isOn=false;
+    appliances=
 }
 
 void Appliance::turnOn()
