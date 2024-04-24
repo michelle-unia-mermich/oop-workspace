@@ -13,13 +13,14 @@ Fridge::Fridge(int powerRating, double volume):Appliance(powerRating)
     _volume= volume;
 }
 
-
+/*
 //Ofc I can do like this but it is inefficient
 Fridge::Fridge(int powerRating, double volume)
 {
     _powerRating=powerRating;
     _volume= volume;
 }
+*/
 
 
 

@@ -1,5 +1,5 @@
-#ifndef FRIDGE_H
-#define FRIDGE_H
+#ifndef TV_H
+#define TV_H
 #include <string>
 using namespace std;
 #include "Appliance.h"

@@ -42,7 +42,7 @@ bool House::addAppliance(Appliance * appliance)
 //getter and setter functions
 int House::get_numpAppliances()
 {
-    return _numAppliances
+    return _numAppliances;
 }
 void House::set_numpAppliances(int numAppliances)
 {
