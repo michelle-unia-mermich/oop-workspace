@@ -8,6 +8,7 @@ class House
 {
     protected:
         int _numAppliances;
+        int _currentnumAppliances;
         Appliance ** appliances;
 
     public:
@@ -25,6 +26,7 @@ class House
 
         double get_totalPowerConsumption(); 
         //return the total power consumption of all appliances in the house
+        
 
 
     ~House()
