@@ -20,8 +20,9 @@ class Appliance
         double get_isOn(); 
         ///void set_isOn(); //We can change the _isOn using the turn on and turn off function
 
-        //a virtual function and makes it returns zero //virtual 
+        //a virtual function and makes it returns zero. 
         double getPowerConsumption();
+        // WANT TO UNDERSTAND THE VIRTUAL MORE, even if I don't put virtual C++ still knows and gets the function definition from the child classes
 
     ~Appliance()
     {

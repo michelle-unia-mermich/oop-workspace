@@ -20,7 +20,7 @@ class House
         
         //getter and setter functions
         int get_numpAppliances();
-        void set_numpAppliances();
+        void set_numpAppliances(int numAppliances);
         
 
         double get_totalPowerConsumption(); 
@@ -29,6 +29,8 @@ class House
 
     ~House()
     {
+        delete [] appliances ;
+
         for (int i = 0; i < _numAppliances; i++)
         {
             delete appliances[i];

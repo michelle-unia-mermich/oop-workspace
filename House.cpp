@@ -10,37 +10,25 @@ House::House()
 House::House(int numAppliances)
 {
     _numAppliances=numAppliances;
-    appliances=
+    appliances= new Appliance*[numAppliances];
 }
 
-void Appliance::turnOn()
+
+bool House::addAppliance(Appliance * appliance)
 {
-    //There are two ways to flip a bool value without being too inefficient
-   //_isOn= !_isOn
-   _isOn= not _isOn;
+
 }
 
-void Appliance::turnOff()
-{
-   _isOn= not _isOn;
-}
 
-double Appliance::get_powerRating()
-{
-   return _powerRating;
-}
 
-double Appliance::get_isOn()
+//getter and setter functions
+int House::get_numpAppliances()
 {
-   return _isOn;
+    return _numAppliances
 }
-
-void Appliance::set_powerRating(int new_powerRating)
+void House::set_numpAppliances(int numAppliances)
 {
-    _powerRating=new_powerRating;
+    _numAppliances=numAppliances;
 }
-
-double Appliance::getPowerConsumption()
-{
-    return 0;
-}
+double House::get_totalPowerConsumption(); 
+    
