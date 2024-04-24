@@ -48,7 +48,7 @@ void House::set_numpAppliances(int numAppliances)
 {
     _numAppliances=numAppliances;
 }
-double House::get_totalPowerConsumption()
+double House::getTotalPowerConsumption()
 {
     double sum=0;
     for (int i=0; i<_numAppliances; i++)

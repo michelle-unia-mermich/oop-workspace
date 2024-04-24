@@ -14,6 +14,7 @@ int main() {
     Fridge* fridge1= new Fridge(400,50);
     house1.addAppliance(TV1);
     house1.addAppliance(fridge1);
+    cout << house1.getTotalPowerConsumption()<< endl;
     
     return 0;
 }

@@ -24,7 +24,7 @@ class House
         void set_numpAppliances(int numAppliances);
         
 
-        double get_totalPowerConsumption(); 
+        double getTotalPowerConsumption(); 
         //return the total power consumption of all appliances in the house
         
 
