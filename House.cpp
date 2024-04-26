@@ -51,7 +51,7 @@ void House::set_numpAppliances(int numAppliances)
 double House::getTotalPowerConsumption()
 {
     double sum=0;
-    for (int i=0; i<_numAppliances; i++)
+    for (int i=0; i<_currentnumAppliances; i++)
     {
         sum+=(*(appliances[i])).getPowerConsumption();
     }

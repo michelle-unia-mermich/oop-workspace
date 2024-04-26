@@ -7,7 +7,7 @@ using namespace std;
 class House
 {
     protected:
-        int _numAppliances;
+        int _numAppliances; //max
         int _currentnumAppliances;
         Appliance ** appliances;
 
@@ -25,18 +25,20 @@ class House
         
 
         double getTotalPowerConsumption(); 
-        //return the total power consumption of all appliances in the house
+        //return the total power consumption of all appliances in the hous
         
 
 
     ~House()
     {
-        delete [] appliances ;
+
 
         for (int i = 0; i < _numAppliances; i++)
         {
             delete appliances[i];
         }
+
+        //delete [] appliances;
 
     };
 };
