@@ -15,6 +15,9 @@ AirFleet::AirFleet()
     AirVehicle * vehicle3=new AirVehicle(5000);
     Helicopter* vehicle4= new Helicopter(100, "WhiteHawk");
     Airplane* vehicle5= new Airplane(15,20);
+    
+    Airplane vehicle = Airplane(20,10);
+    &vehicle
     fleet[0]=vehicle1;
     fleet[1]=vehicle2;
     fleet[2]=vehicle3;
