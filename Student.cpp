@@ -12,3 +12,8 @@ Student::Student(string input_name, int input_id):Person(input_name)
 {
     id=input_id;
 }
+
+int Student::get_id()
+{
+    return id;
+}
