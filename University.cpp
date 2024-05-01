@@ -11,7 +11,7 @@ University::University()
     location="";
     max_size=10;
     pCourse = new Course [max_size];
-    pGradeb = new Gradebook [1]; //University contains array of Gradebook objects size 1
+    Gradeb = Gradebook();
     //if don't want to set a random number here, have to delete the array and set a new array everytime adding a new object
     /*
     (1) if you use an array here, you have to have a specific number 10 or 20. Cannot leave blank, no length of array specified.
@@ -39,6 +39,7 @@ University::University(string _name, string _location)
     location=_location;
     pCourse = new Course [max_size];
     count=0;
+    Gradeb = Gradebook();
 }
 
 void University::addCourse(int id, string name)
@@ -65,3 +66,8 @@ void University::addCourse(int id, string name)
 
 // Now how I interpret this: Gradebook has a composition with University (to 1) but University does not have composition with Gradebook but just normal association with cardinality 1?
 //Now from this interpretation the Gradebook gets deleted when University gets deleted, but University does not get deleted when gradebook gets deleted, then that means the university can exist when Gradebook =0, then why does it show 1 on the association?
+
+Course* University::get_Course_pointer()
+{
+    return pCourse;
+}
