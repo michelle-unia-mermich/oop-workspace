@@ -27,3 +27,15 @@ void Gradebook::addGrade(int stud_id, int course_id, string assignment,int value
         cout<< "No more space to add a grade to the Gradebook."<< endl;
     }
 }
+Grade* Gradebook::get_Grade_inGradebook()
+{
+    return pGrade;
+}
+int Gradebook::get_count()
+{
+    return count;
+}
+int*  Gradebook::return_address_count()
+{
+    return &count;
+}

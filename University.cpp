@@ -71,3 +71,12 @@ Course* University::get_Course_pointer()
 {
     return pCourse;
 }
+
+Gradebook University::get_Gradebook()
+{
+    return Gradeb; //return the Gradebook object stored inside this university object.really? i don't think so..
+}
+Gradebook* University::get_pointerGradebook()
+{
+    return &Gradeb;
+}

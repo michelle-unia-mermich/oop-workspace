@@ -19,6 +19,11 @@ class Gradebook
     Gradebook();
     void addGrade(int stud_id, int course_id, string assignment,int value);
 
+    Grade* get_Grade_inGradebook();
+    int get_count();
+    int* return_address_count();
+
+
     ~Gradebook()
     {
 

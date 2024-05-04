@@ -16,6 +16,7 @@ class Grade
     public:
     Grade();
     Grade(string _assignment, int _value, int _student_id, int _course_id);
+    
     int get_value();
     string get_assignment();
 
