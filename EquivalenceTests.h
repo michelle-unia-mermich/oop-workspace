@@ -27,14 +27,18 @@ private:
         Addition addition;
         if (addition.add(5, 10) != 15) {
             std::cout << "Test 1 failed!" << std::endl;
+            return; //in  avoid function, return nothing just breaks out of the void function. what about in non-void function?
         }
+        std::cout<<"Test 2 succeeded!"<<std::endl;
     }
 
     void testNegativeIntegers() {
         Addition addition;
         if (addition.add(-4, -5) != -9) {
             std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
+        std::cout<<"Test 2 succeeded!"<<std::endl;
     }
 
     void testPositiveNegative()
@@ -42,10 +46,13 @@ private:
         Addition addition;
         if (addition.add(-4, 5) != 1) {
             std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
         if (addition.add(-1, 1) != 0) {
             std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
+        std::cout<<"Test 2 succeeded!"<<std::endl;
     }
 
     void  testZero()
@@ -53,13 +60,17 @@ private:
         Addition addition;
         if (addition.add(0, 5) != 5) {
             std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
         if (addition.add(0, -5) != -5) {
             std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
         if (addition.add(0, 0) != 0) {
-        std::cout << "Test 2 failed!" << std::endl;
+            std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
+        std::cout<<"Test 2 succeeded!"<<std::endl;
     }
 
     void  testBigPositiveNumber()
@@ -68,7 +79,9 @@ private:
         Addition addition;
         if (addition.add(1000000, 2000000) != 3000000) {
             std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
+        std::cout<<"Test 2 succeeded!"<<std::endl;
     }
 
     void  testBigNegativeNumber()
@@ -76,7 +89,10 @@ private:
         Addition addition;
         if (addition.add(-1000000, -2000000) != -3000000) {
             std::cout << "Test 2 failed!" << std::endl;
+            return;
         }
+        std::cout<<"Test 2 succeeded!"<<std::endl;
     }
+
     
 };
