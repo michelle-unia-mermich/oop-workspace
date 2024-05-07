@@ -11,9 +11,10 @@ class Invoice {
         int dollarsOwed;
     public:
         Invoice();
-        Invoice(string invoiceId, int dollarsOwed);
-
-
+        Invoice(string invoiceId);
+        void addServiceCost(int costDollars);
+        int getDollarsOwed();
+        string getInvoiceId();
 
 };
 
