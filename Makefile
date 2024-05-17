@@ -3,4 +3,4 @@ static:
 main:
 	g++  -o main.o main.cpp
 cleanup:
-	rm -rf *.o main
+	rm -rf *.o
