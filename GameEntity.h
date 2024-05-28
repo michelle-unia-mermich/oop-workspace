@@ -7,7 +7,7 @@
 #include <iostream>
 //#include "Explosion.h"
 //!canot add Explosion.h as a dependency of GameEntity.h since GameEntity.h is a dependency of Explosion.h, it needs to be initialised successfully before Explosion class can be innitialised successfully
-
+//!look at the results of the first time submitting on Gradescope
 using namespace std;
 
 class GameEntity
