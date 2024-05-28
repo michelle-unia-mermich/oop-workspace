@@ -6,6 +6,7 @@
 #include <tuple>
 #include <iostream>
 #include "Explosion.h"
+
 using namespace std;
 
 class GameEntity
@@ -48,7 +49,7 @@ class GameEntity
 
         //virtual functions to use the functions of the child classes
         virtual void move(int dx, int dy){}; //?then should they be normal virtual functions or pure virtual functions (which means there will be non object inintialisatin of this class)?
-        virtual Explosion explode() { };
+        //virtual Explosion explode() { };
 
     ~GameEntity() //?If putting destructor here, public encapsulation?
     {

@@ -11,7 +11,7 @@ class Mine: public GameEntity
     private:
     public:
         Mine( int xPos, int yPos): GameEntity(xPos,yPos,'M'){}
-        Explosion explode() override
+        Explosion explode()
         {
             Explosion explosionObject;
             type = 'X';
