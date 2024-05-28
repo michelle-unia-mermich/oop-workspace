@@ -17,7 +17,7 @@ class Utils
             int yCoord= rand()&(gridHeight);
             return std::tuple<int,int> (xCoord,yCoord);
         }
-        double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2)
+        static double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2)
         {
             //Returns the Euclidean distance between two positions given as pos1 and pos2 as a double.
             return sqrt( pow(  ((std::get<0>(pos1))-(std::get<0>(pos2))),  2   )+pow(  ((std::get<1>(pos1))-(std::get<1>(pos2))),   2  )    );
