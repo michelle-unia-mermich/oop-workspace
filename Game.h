@@ -46,6 +46,8 @@ class Game
                 this->entities.push_back(new Mine(std::get<0>(randomPosition1),std::get<1>(randomPosition1)));
             }
 
+            cout<< "Test Game.h: All have been added to the entities vector. the size of the vector now is: "<<entities.size()<<endl;
+
             return entities;
         }
 
@@ -89,11 +91,15 @@ class Game
                                     minePointer->explode(); //recall minePointer is the pointer that points to the same address storing a Mine object as entity2. When this line is executed, we have already executed the explode() function on this objecdt.
                                     //this function will return an Explosion object while changing the type of the old Mine object to X
                                     //Explosion newExplosionObjectCreated= minePointer->explode(); //this is not needed because the function only says "call explode() for the corresponding Mine."
-
+                                    cout<< "Test Game.h: One mine has exploded. Print out the type of this mine, should be X: "<< entity2->getType()<<endl;
+                                    
                                     //2-when the mine explodes, we remove the ship out from the vector
                                     //?what is the best way to loop through the vector while keeping track of the country to access/delete the element of the vector using vector.at() and vector.erase()?
                                     delete this->entities.at(counterEntity1); 
+                                    //!ERROR: deleting object of polymorphic class type ‘GameEntity’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+                                    //?When does a class need a non-virtual destructor?
                                     this->entities.erase(this->entities.begin()+counterEntity1); 
+                                    cout<< "Test Game.h: One ship exploded has been exploded and the remaining size of the vector is "<<entities.size()<<endl;
                                     counterEntity1--; //since we have already deleted an element from the vector
                                 }
                             }
@@ -110,6 +116,8 @@ class Game
                     if (entity3->getType()=='S')
                     {
                         noShipsLeft++;
+                        cout<< "Test Game.h: Print out the number of ships left in every loop, this is loop with counterGameLoop: "<< counterGameLoop<<". No ships left are: "<< noShipsLeft<<endl;
+
                     }
                 }
 
