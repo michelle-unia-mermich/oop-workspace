@@ -16,7 +16,7 @@ TARGET = test_runner
 
 # Source files
 
-SRCS = main.cpp Invoice.cpp
+SRCS = test.cpp Invoice.cpp
 
 # Build and run tests
 
