@@ -12,12 +12,10 @@ class Explosion: public GameEntity, public Effect
 
     public:
         Explosion(){};
-        Explosion( int xPos, int yPos)
+        Explosion( int xPos, int yPos):GameEntity(xPos,yPos,'E')
         {
-            position= std::tuple<int,int> (xPos,yPos);
-            this->type='E';
         }
-        void apply(GameEntity& entity) override
+        void apply(GameEntity& entity) override //!here when we pass in GameEntity& object, even if we pass in the child class objects, the compiler will still understand as the base class objects
         {
             //modifies the inputted GameEntity object,  sets the position to (-1, -1) and the type to 'X'.
             entity.setPos(-1,-1);

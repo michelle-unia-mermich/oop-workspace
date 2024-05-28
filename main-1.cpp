@@ -12,6 +12,6 @@ int main()
     double distance2 = Utils::calculateDistance(randomPosition1, randomPosition2); //calling without objects since this is static function
     std::cout<< "The distance is "<< distance2 <<std::endl;
 
-    //always make sure task 1 gets full marks before going to task 2
+    //!read question carefully wehther it is static or non-static and always make sure task 1 gets full marks before going to task 2
     return 0;
 }

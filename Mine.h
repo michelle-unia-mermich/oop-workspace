@@ -10,6 +10,7 @@ class Mine: public GameEntity
 {
     private:
     public:
+        Mine(){} //!Borna said that should always provide a default constructor if you have provided a parameterised constructor
         Mine( int xPos, int yPos): GameEntity(xPos,yPos,'M'){}
         Explosion explode()
         {
