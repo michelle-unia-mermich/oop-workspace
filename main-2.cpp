@@ -19,6 +19,7 @@ int main()
     Explosion explosionFromMine= mineObject.explode();
     cout<< "Type of the mineOBject is (check if it is X after it has exploded) : "<< mineObject.getType()<<endl;
     cout << "Check if the returned value is an Explosion object. It should print out E (type of Explosion): "<< explosionFromMine.getType()<< endl;
+    cout << "Check the position of the Explosion object. (" << std::get<0>(explosionFromMine.getPos()) << ","<<std::get<1>(explosionFromMine.getPos())<<")"<<endl;
     //?Any function to find the class that a variable/object belongs to?
 
     //*3-Test the function of apply() in the Explosion object
