@@ -10,14 +10,16 @@ int main()
     
     //*1-Test the move function of the Ship object (actually should have unit test)
     Ship shipObject(20,40);
-    shipObject.move(2,5);
-    //! Why does this not work? cout<< "New pos of the ship is: " << shipObject.getPos()<<endl;
+    shipObject.move(-2,5);
+    //! Why does this not work-cannot print out the vector type??? cout<< "New pos of the ship is: " << shipObject.getPos()<<endl;
     cout<< "New pos of the ship is: XCoordinate: " << std::get<0>(shipObject.getPos())<<" Y Coordinate: "<< std::get<1>(shipObject.getPos())<< endl;
     
     //*2-Test the explode() function of Mine object
     Mine mineObject(50,60);
-    mineObject.explode();
-    cout<< "Type of the mineOBject is : "<< mineObject.getType()<<endl;
+    Explosion explosionFromMine= mineObject.explode();
+    cout<< "Type of the mineOBject is (check if it is X after it has exploded) : "<< mineObject.getType()<<endl;
+    cout << "Check if the returned value is an Explosion object. It should print out E (type of Explosion): "<< explosionFromMine.getType()<< endl;
+    //?Any function to find the class that a variable/object belongs to?
 
     //*3-Test the function of apply() in the Explosion object
     Explosion explosionObject;
