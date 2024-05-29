@@ -89,11 +89,13 @@ class Game
                                 std::tuple<int, int> pos2 =entity2->getPos();
                                 double distance= sqrt( pow(  ((std::get<0>(pos1))-(std::get<0>(pos2))),  2   )+pow(  ((std::get<1>(pos1))-(std::get<1>(pos2))),   2 ) );
 
-                                if (distance<mineDistanceThreshold)
+                                if (distance<=mineDistanceThreshold)
                                 {
                                     //1-call explode() for the corresponding Mine.
+                                    //cout<<"type entity2 before explode:"<<entity2->getType()<<endl;
                                     Mine* minePointer = dynamic_cast<Mine*>(entity2);
                                     minePointer->explode();
+                                    //cout<<"type entity2 after explode:"<<entity2->getType()<<endl;
                                     
                                     //2-change the boolean value of the ship
                                     Ship* shipPointer2 = dynamic_cast<Ship*>(entity1);
@@ -118,8 +120,19 @@ class Game
                             counterRemoveShip--;
                         }
                     }
+                    if ((entity->getType()=='M'))
+                    {
+                            //cout<<"There's this unexploded mine with type M" <<endl;
+                    }
+
+                    if ((entity->getType()=='X'))
+                    {
+                            //cout<<"There's this exploded mine with type X" <<endl;
+                    }
                     counterRemoveShip++;
                 }
+                    
+                
                 
                 
                 //The function should terminate when either all Ship objects are destroyed
@@ -143,16 +156,14 @@ class Game
                     //cout<< "There are no ships left after iteration no. "<< counterGameLoop<<". Will break the loop now"<<endl;
                     break; //?Does this break break out the the nearest loop that it is in, ie. the while loop?
                 }
-
-                
             }
-            
             //After the main game loop has ended, for Testing
             noIterationsRun=counterGameLoop;
-
+                
         }
+            
+};
   
     
-};
 
 #endif
