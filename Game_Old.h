@@ -85,6 +85,18 @@ class Game
                 else ++it;
                 }
                 
+                vector< GameEntity* >::iterator it = this->entities.begin();
+
+                while(it != entities.end()) {
+
+                    if((it->getType()=='S')) {
+
+                    it = this->entities.erase(it);
+                    //return value of .erase(): An iterator pointing to the new location of the element that followed the last element erased by the function call.
+                }
+                else ++it;
+                }
+                
                 */
                 unsigned counterEntity1=0; 
                 for (auto *entity1: this->entities)
@@ -168,3 +180,5 @@ class Game
 };
 
 #endif
+
+

@@ -60,17 +60,16 @@ class Game
             while (counterGameLoop<maxIterations)
             {
                 //1-Call move(1, 0) for all Ship objects in entities.
-                for (auto *entity: this->entities) //!this is the best way to access elements of the vector, Borna said
+                for (auto *entity: this->entities) 
                 {
                     if (entity->getType()=='S')
                     {
                         entity->move(1,0);
                     }
                 }
-
                 //2-Check if any Ship object is within a certain distance (mineDistanceThreshold) of a Mine object. 
-                //If a Ship is found within the threshold, call explode() for the corresponding Mine.
-            
+
+                //*MY CODE: a part of gameLoop function
                 for (auto *entity1: this->entities)
                 {
                     if (entity1->getType()=='S')
@@ -79,23 +78,16 @@ class Game
                         {
                             if (entity2->getType()=='M')
                             {
-                                //!For some reason distance calculated by utils object just returns 0
-                                //Utils utilsObject;
-                                //double distance= utilsObject.calculateDistance(entity1->getPos(),entity1->getPos());
 
                                 std::tuple<int, int> pos1 =entity1->getPos();
                                 std::tuple<int, int> pos2 =entity2->getPos();
-                                double distance= sqrt( pow(  ((std::get<0>(pos1))-(std::get<0>(pos2))),  2   )+pow(  ((std::get<1>(pos1))-(std::get<1>(pos2))),   2 ) );
+                                double distance= sqrt( pow(  ((std::get<0>(pos1))-(std::get<0>(pos2))),  2   )+pow(  ((std::get<1>(pos1))-(std::get<1>(pos2))), 2 ) );
 
                                 if (distance<=mineDistanceThreshold)
                                 {
-                                    //1-call explode() for the corresponding Mine.
-                                    //cout<<"type entity2 before explode:"<<entity2->getType()<<endl;
                                     Mine* minePointer = dynamic_cast<Mine*>(entity2);
                                     minePointer->explode();
-                                    //cout<<"type entity2 after explode:"<<entity2->getType()<<endl;
                                     
-                                    //2-change the boolean value of the ship
                                     Ship* shipPointer2 = dynamic_cast<Ship*>(entity1);
                                     shipPointer2->hasMetMine=true;
                                 }
@@ -113,19 +105,11 @@ class Game
                         Ship* shipPointer = dynamic_cast<Ship*>(entity);
                         if(shipPointer->hasMetMine==true)
                         {
+                            //*REMOVE THE SHIP FROM THE VECTOR
                             delete this->entities.at(counterRemoveShip); 
                             this->entities.erase(this->entities.begin()+counterRemoveShip); 
                             counterRemoveShip--;
                         }
-                    }
-                    if ((entity->getType()=='M'))
-                    {
-                            //cout<<"There's this unexploded mine with type M" <<endl;
-                    }
-
-                    if ((entity->getType()=='X'))
-                    {
-                            //cout<<"There's this exploded mine with type X" <<endl;
                     }
                     counterRemoveShip++;
                 }
