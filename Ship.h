@@ -11,6 +11,8 @@ class Ship: public GameEntity
 {
     private:
     public:
+        //Temporary solution
+        bool hasMetMine=false;
         
         Ship( int xPos, int yPos): GameEntity(xPos,yPos,'S'){}
     

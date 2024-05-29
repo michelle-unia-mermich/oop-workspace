@@ -72,7 +72,21 @@ class Game
 
                 //2-Check if any Ship object is within a certain distance (mineDistanceThreshold) of a Mine object. 
                 //If a Ship is found within the threshold, call explode() for the corresponding Mine.
-            
+                
+                /*
+                vector< string >::iterator it = curFiles.begin();
+
+                while(it != curFiles.end()) {
+
+                    if(aConditionIsMet) {
+
+                    it = curFiles.erase(it);
+                }
+                else ++it;
+                }
+                
+                */
+                unsigned counterEntity1=0; 
                 for (auto *entity1: this->entities)
                 {
                     if (entity1->getType()=='S')
@@ -91,36 +105,35 @@ class Game
 
                                 if (distance<mineDistanceThreshold)
                                 {
+                                    cout<< "The distance is (after checking this lies within the threshold) "<< distance
+                                    <<".The location of the Ship is "<<"("<<std::get<0>(entity1->getPos())<<","<<std::get<1>(entity1->getPos())<<")"
+                                    <<".The location of the Mine is "<<"("<<std::get<0>(entity2->getPos())<<","<<std::get<1>(entity2->getPos())<<")"<<endl;
                                     //1-call explode() for the corresponding Mine.
+                                    //!entity2->explode();
+                                    //!If the compiler understands the object as the base class (eg. when we use pointers to the base class) and not the child class, but we want to do functions of the base class, there are two ways (1) Declare virtual methods in the base class (2) DYNAMIC CASTING to the child classes (which anh Nam said is not recommended)
+                                    //*In this case, in other to use explode(), have to use DYNAMIC CASTING; since cannot declare this function explode() in the base class
+                                    //Derived* derivedClassPointer = dynamic_cast<Derived*-new pointer type>(baseClassPointer);
+                                    //recall: explode function of Mine returns an Explosion object. Replace that object here at this position (the pointer at this position will point at the Explosion object instead)
                                     Mine* minePointer = dynamic_cast<Mine*>(entity2);
-                                    minePointer->explode();
+                                    minePointer->explode(); //recall minePointer is the pointer that points to the same address storing a Mine object as entity2. When this line is executed, we have already executed the explode() function on this objecdt.
+                                    //this function will return an Explosion object while changing the type of the old Mine object to X
+                                    //Explosion newExplosionObjectCreated= minePointer->explode(); //this is not needed because the function only says "call explode() for the corresponding Mine."
+                                    cout<< "Test Game.h: One mine has exploded. Print out the type of this mine, should be X: "<< entity2->getType()<<endl;
                                     
-                                    //2-change the boolean value of the ship
-                                    Ship* shipPointer2 = dynamic_cast<Ship*>(entity1);
-                                    shipPointer2->hasMetMine=true;
+                                    //2-when the mine explodes, we remove the ship out from the vector
+                                    //?what is the best way to loop through the vector while keeping track of the country to access/delete the element of the vector using vector.at() and vector.erase()?
+                                    delete this->entities.at(counterEntity1); 
+                                    //!ERROR: deleting object of polymorphic class type ‘GameEntity’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+                                    //?When does a class need a non-virtual destructor?
+                                    this->entities.erase(this->entities.begin()+counterEntity1); 
+                                    cout<< "Test Game.h: One ship exploded has been exploded and the remaining size of the vector is "<<entities.size()<<endl;
+                                    counterEntity1--; //since we have already deleted an element from the vector
                                 }
                             }
                         }
                     }
+                    counterEntity1++;
                 }
-
-                unsigned counterRemoveShip=0;
-                for (auto *entity: this->entities) 
-                {
-                    if ((entity->getType()=='S'))
-                    {
-                        //dynamic casting
-                        Ship* shipPointer = dynamic_cast<Ship*>(entity);
-                        if(shipPointer->hasMetMine==true)
-                        {
-                            delete this->entities.at(counterRemoveShip); 
-                            this->entities.erase(this->entities.begin()+counterRemoveShip); 
-                            counterRemoveShip--;
-                        }
-                    }
-                    counterRemoveShip++;
-                }
-                
                 
                 //The function should terminate when either all Ship objects are destroyed
                 //Check if there are still Ship objects in the vector
@@ -140,7 +153,6 @@ class Game
                 if (noShipsLeft==0)
                 {
                     //break out from the main game loop
-                    cout<< "There are no ships left after iteration no. "<< counterGameLoop<<". Will break the loop now"<<endl;
                     break; //?Does this break break out the the nearest loop that it is in, ie. the while loop?
                 }
 
