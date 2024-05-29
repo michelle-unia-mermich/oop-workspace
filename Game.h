@@ -50,7 +50,7 @@ class Game
                 this->entities.push_back(new Mine(std::get<0>(randomPosition1),std::get<1>(randomPosition1)));
             }
 
-            cout<< "Test Game.h: All have been added to the entities vector. the size of the vector now is: "<<entities.size()<<endl;
+            //cout<< "Test Game.h: All have been added to the entities vector. the size of the vector now is: "<<entities.size()<<endl;
 
             return entities;
         }
@@ -130,7 +130,7 @@ class Game
                     if (entity3->getType()=='S')
                     {
                         noShipsLeft++;
-                        cout<< "Test Game.h: Print out the number of ships left in every loop, this is loop with counterGameLoop: "<< counterGameLoop<<". No ships left are: "<< noShipsLeft<<endl;
+                        //cout<< "Test Game.h: Print out the number of ships left in every loop, this is loop with counterGameLoop: "<< counterGameLoop<<". No ships left are: "<< noShipsLeft<<endl;
 
                     }
                 }
@@ -140,7 +140,7 @@ class Game
                 if (noShipsLeft==0)
                 {
                     //break out from the main game loop
-                    cout<< "There are no ships left after iteration no. "<< counterGameLoop<<". Will break the loop now"<<endl;
+                    //cout<< "There are no ships left after iteration no. "<< counterGameLoop<<". Will break the loop now"<<endl;
                     break; //?Does this break break out the the nearest loop that it is in, ie. the while loop?
                 }
 
