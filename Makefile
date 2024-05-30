@@ -4,7 +4,9 @@ main-2:
 	g++ -std=c++11 -o main-2.o main-2.cpp 
 main-3:
 	g++ -std=c++11 -o main-3.o main-3.cpp 
+	./main-3.o
 test:
 	g++ -std=c++11 -o UnitTest.o UnitTest.cpp 
+	./UnitTest.o
 cleanup:
 	rm -rf *.o

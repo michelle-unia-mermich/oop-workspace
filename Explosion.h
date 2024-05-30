@@ -11,7 +11,7 @@ class Explosion: public GameEntity, public Effect
 {
 
     public:
-        Explosion():GameEntity(0,0,'E'){} //!Experience: must always provide definition for default constructor, not just simply set an empty bracket {} because when calling the object out, nothing will be initialised
+        Explosion():GameEntity(0,0,'E'){} 
         Explosion( int xPos, int yPos):GameEntity(xPos,yPos,'E')
         {
         }

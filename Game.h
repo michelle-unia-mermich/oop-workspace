@@ -1,3 +1,5 @@
+//this version of Game.h is according to the wrong understanding of the question. When the ship is within distance from the mine, the ship is not deleted from the vector but just have the explostion type .apply() on the ship and change the ship's type to X.
+
 #ifndef GAME_H
 #define GAME_H
 #include <string>
@@ -60,7 +62,7 @@ class Game
             while (counterGameLoop<maxIterations)
             {
                 //1-Call move(1, 0) for all Ship objects in entities.
-                for (auto *entity: this->entities) //!this is the best way to access elements of the vector, Borna said
+                for (auto *entity: this->entities) 
                 {
                     if (entity->getType()=='S')
                     {
@@ -71,7 +73,7 @@ class Game
                 //2-Check if any Ship object is within a certain distance (mineDistanceThreshold) of a Mine object. 
                 //If a Ship is found within the threshold, call explode() for the corresponding Mine.
             
-                for (auto *entity1: this->entities)
+                for (auto &entity1: this->entities) //there is no difference in the output between using auto* and auto&
                 {
                     if (entity1->getType()=='S')
                     {
@@ -79,13 +81,8 @@ class Game
                         {
                             if (entity2->getType()=='M')
                             {
-                                //!For some reason distance calculated by utils object just returns 0
-                                //Utils utilsObject;
-                                //double distance= utilsObject.calculateDistance(entity1->getPos(),entity1->getPos());
 
-                                std::tuple<int, int> pos1 =entity1->getPos();
-                                std::tuple<int, int> pos2 =entity2->getPos();
-                                double distance= sqrt( pow(  ((std::get<0>(pos1))-(std::get<0>(pos2))),  2   )+pow(  ((std::get<1>(pos1))-(std::get<1>(pos2))),   2 ) );
+                                double distance= Utils::calculateDistance(entity1->getPos(),entity2->getPos());
 
                                 if (distance<=mineDistanceThreshold)
                                 {
@@ -118,15 +115,6 @@ class Game
                             counterRemoveShip--;
                         }
                     }
-                    if ((entity->getType()=='M'))
-                    {
-                            //cout<<"There's this unexploded mine with type M" <<endl;
-                    }
-
-                    if ((entity->getType()=='X'))
-                    {
-                            //cout<<"There's this exploded mine with type X" <<endl;
-                    }
                     counterRemoveShip++;
                 }
                     
@@ -152,7 +140,7 @@ class Game
                 {
                     //break out from the main game loop
                     //cout<< "There are no ships left after iteration no. "<< counterGameLoop<<". Will break the loop now"<<endl;
-                    break; //?Does this break break out the the nearest loop that it is in, ie. the while loop?
+                    break; 
                 }
             }
             //After the main game loop has ended, for Testing
