@@ -13,8 +13,8 @@ class Utils
         static std::tuple<int, int> generateRandomPos(int gridWidth, int gridHeight)
         {
             //Returns a random position within a grid represented by gridWidth and gridHeight as a std::tuple<int, int>.
-            int xCoord= rand()&(gridWidth);
-            int yCoord= rand()&(gridHeight);
+            int xCoord= rand()%(gridWidth);
+            int yCoord= rand()%(gridHeight);
             return std::tuple<int,int> (xCoord,yCoord);
         }
         static double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2)

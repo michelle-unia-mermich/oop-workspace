@@ -9,7 +9,7 @@ using namespace std;
 class Effect
 {
     public:
-        virtual void apply(GameEntity& entity)=0; //?Definition of &
+        virtual void apply(GameEntity& entity)=0;
 };
 
 #endif
