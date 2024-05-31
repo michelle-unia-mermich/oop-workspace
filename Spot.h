@@ -35,6 +35,8 @@ class Spot
             this->category=category;
         }
 
+        virtual void shift(int dx, int dy){};
+
 
 };
 #endif
