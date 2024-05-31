@@ -117,6 +117,28 @@ class Play
             }
         }
 
+        ~Play()
+        {
+            //!if a class has dynamic data members, do not forget to clean up in destructor
+            //?If a class has a vector storing pointers pointing to dynamic objects, when the default 
+            //?constructor deletes the vector, it only deletes the vectors and the pointers in the vector 
+            //?but it does not delete the dynamically allocated objects the pointers point to right? JUST LIKE AN ARRAY OF DYNAMIC POINTERS
+            //?So we have to loop through the vector and do like this:
+            
+            unsigned it=0; //assign a counter to keep track of index in the vector
+            for (auto* entry: this->matrix) 
+            {
+
+                delete this->matrix.at(it); //Delete the dynamically allocated objects, since entities is a vector holding dynamic pointer   
+                /*
+                no need to delete the vector pointer from the vector because when vector is deleted, entries inside will be as well.
+                this->entities.erase(this->entities.begin()+counterRemoveShip); 
+                counterRemoveShip--;
+                */
+                it++;
+            }
+
+        }
 };
 
 #endif

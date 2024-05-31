@@ -35,8 +35,10 @@ class Spot
             this->category=category;
         }
 
-        virtual void shift(int dx, int dy){};
-
+        //note: need to have at least one virtual method. 
+        //the virtual method is necessary because we need to tell the compiler that Spot is a polymorphic class to use dyamic_cast
+        virtual ~Spot(){} //!virtual destructor. You have forgotten once: it's NECESSARY to have virtual destructor for polymorphic base class when only instances of derived classes are used. See Notion.
+        //virtual destructor or not in base class doesn't have a difference in this case because we don't declare delete any dynamic var in the derived classes' constructors, but it will be useful in the future.
 
 };
 #endif
