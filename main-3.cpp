@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-    //randomise time
-    srand( static_cast<unsigned int>(  time(0)  )  );
+    //set seed of randomisation
+    srand( static_cast<unsigned int>( time(0)));
 
     Play play;
 

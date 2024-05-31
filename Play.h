@@ -22,7 +22,7 @@ class Play
 
     public:
         //has a default constructor
-        //?So we don't need to declare constructor at all?
+        //?So we don't need to declare constructor at all? Answer: yes, it is accepted on Gradescope.
 
         std::vector<Spot*>& getMatrix()
         {

@@ -12,7 +12,7 @@ class Assists
         static std::tuple<int, int> createRandomLoc(int matrixWidth, int matrixHeight)
         {
             //returns a random location within the game's matrix. (0,0) should be the first location
-            //?(0,0) as the first location as in the first location this random function returns or just means the coordinates follow positive coordinates and thus (0,0) is the beginning coordinate?
+            //"(0,0) as the first location" in the question is as in the first location this random function returns or just means the coordinates follow positive coordinates and thus (0,0) is the beginning coordinate? Answer: the latter. the random function does not need to return (0,0) as the first coordinate.
             int x = rand()% matrixWidth;
             int y = rand()% matrixHeight;
             return std::make_tuple(x,y);

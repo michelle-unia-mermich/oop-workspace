@@ -9,6 +9,5 @@ class Influence //pure abstract class
     public:
         virtual void implement(Spot& spot)=0;
 
-
 };
 #endif
